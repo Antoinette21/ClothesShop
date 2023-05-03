@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\models\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
