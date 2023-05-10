@@ -17,6 +17,7 @@ import { AuthenticationPageComponent } from './pages/authentication/authenticati
 import { MainAdminPageComponent } from './pages/main-admin/main-admin-page/main-admin-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ErrorPageComponent } from './pages/error/error-page/error-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ErrorPageComponent } from './pages/error/error-page/error-page.componen
     AuthenticationPageComponent,
     MainAdminPageComponent,
     NavigationComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
