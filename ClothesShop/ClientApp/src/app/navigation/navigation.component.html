@@ -1,1 +1,72 @@
-<p>navigation works!</p>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Shoes</a>
+
+    <!-- Toggle button -->
+    <button class="navbar-toggler"
+            type="button"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse"
+         id="navbarButtonsExample"
+         mdbCollapse>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">MEN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">WOMEN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">BAGS</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+
+      <div class="d-flex align-items-center">
+        <form class="d-flex input-group w-auto">
+          <input type="search"
+                 class="form-control"
+                 placeholder="Type query"
+                 aria-label="Search" />
+          <button class="btn btn-outline-primary"
+                  type="button"
+                  data-mdb-ripple-color="dark">
+            Search
+          </button>
+        </form>
+
+        <ul class="navbar-nav d-flex flex-row">
+          <!-- Icons -->
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#">
+              <img class="fas fa-shopping-cart navigitaion-icon" src="..\assets\img\like.png">
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#">
+              <img class="fas fa-shopping-cart navigitaion-icon" src="..\assets\img\user.png">
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#">
+              <img class="fas fa-shopping-cart navigitaion-icon" src="..\assets\img\shoppingbag.png">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
