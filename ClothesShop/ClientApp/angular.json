@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "ClothesShop"
+  "defaultProject": "ClothesShop",
+  "cli": {
+    "analytics": false
+  }
 }
