@@ -13,6 +13,10 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openLikeProductList(): void {
+    this.router.navigate(['product-like']);
+  }
+
   openProductList(category: string): void {
     this.router.navigate(['product-list']);
   }

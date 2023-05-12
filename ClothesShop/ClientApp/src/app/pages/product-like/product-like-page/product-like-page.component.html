@@ -1,1 +1,18 @@
-<p>product-like-page works!</p>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col" *ngFor="let product of getListProduct()">
+    <div class="card h-100 cursor">
+      <img src="{{ product.mainImage }}" class="card-img-top" (click)="openCard(product.id)">
+      <div class="card-body">
+        <div class="row align-items-start">
+          <div class="col-10">
+            <h5 class="card-title" (click)="openCard(product.id)">{{ product.name }}</h5>
+            <p class="card-text" (click)="openCard(product.id)">{{ product.price }}</p>
+          </div>
+          <div class="col-2">
+            <img src="{{ getLikeButton(product) }}" class="card-img-top nav-link-cursor" (click)="clickLike(product)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
