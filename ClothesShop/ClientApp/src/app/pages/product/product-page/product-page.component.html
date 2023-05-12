@@ -5,22 +5,22 @@
   <div class="col-4">
     <img src="{{ getProduct().listImage[1] }}">
   </div>
-  <div class="col-4">
+  <div class="col-3 price-container">
     <p class="lead">
       {{ getProduct().name }}
     </p>
-    <p class="lead">
+    <p class="lead my-4">
       Цена: {{ getProduct().price }}
     </p>
-    <span class="lead">Размеры: </span><span class="lead" *ngFor="let size of getProduct().size">{{ size }} </span>
-    <div class="d-grid gap-2 d-md-flex">
-      <input class="btn-lg" type="number" id="countProduct" name="countProduct" min="1" max="5">
-      <button class="btn btn-primary btn-lg" type="button">Купить</button>
+    <span class="lead my-4">Размеры: </span><span class="lead my-4" *ngFor="let size of getProduct().size">{{ size }} </span>
+    <div class="d-grid gap-2 d-md-flex my-4">
+      <button class="btn btn-outline-dark btn-lg" type="button">Купить</button>
+      <button class="btn btn-outline-dark btn-lg" type="button">В избранное</button>
     </div>
   </div>
 </div>
 <div class="row align-items-start">
-  <div class="col-8 text-center">
+  <div class="col-8 text-start my-5">
     <p class="lead">
       Description
     </p>
