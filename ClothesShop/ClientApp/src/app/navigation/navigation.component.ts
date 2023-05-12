@@ -17,6 +17,10 @@ export class NavigationComponent implements OnInit {
     this.router.navigate(['product-like']);
   }
 
+  openBasket(): void {
+    this.router.navigate(['basket']);
+  }
+
   openProductList(category: string): void {
     this.router.navigate(['product-list']);
   }
