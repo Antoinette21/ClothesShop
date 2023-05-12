@@ -19,7 +19,8 @@ export class ProductPageComponent implements OnInit {
     listImage: [
       "https://uxawscdn.baozun.com/aws/96001096/20210825/9B8F088396634782A750BD352CC4A158.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464",
       "https://uxawscdn.baozun.com/aws/96001096/20210825/D94CD379EBD0B64D75C6BBC6073690C0_1.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464"
-    ]
+    ],
+    isLike: true
   };
 
   constructor() {

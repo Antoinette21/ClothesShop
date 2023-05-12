@@ -11,7 +11,7 @@ export class ProductListPageComponent implements OnInit {
 
   private listProduct: Product[] = [
     {
-      id: "123",
+      id: "1",
       name: "Рубаха",
       size: [48, 50, 52],
       price: 1500,
@@ -21,10 +21,11 @@ export class ProductListPageComponent implements OnInit {
       listImage: [
         "https://uxawscdn.baozun.com/aws/96001096/20210825/9B8F088396634782A750BD352CC4A158.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464",
         "https://uxawscdn.baozun.com/aws/96001096/20210825/D94CD379EBD0B64D75C6BBC6073690C0_1.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464"
-      ]
+      ],
+      isLike: true
     },
     {
-      id: "123",
+      id: "2",
       name: "Рубаха",
       size: [48, 50, 52],
       price: 1500,
@@ -34,10 +35,11 @@ export class ProductListPageComponent implements OnInit {
       listImage: [
         "https://uxawscdn.baozun.com/aws/96001096/20210825/9B8F088396634782A750BD352CC4A158.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464",
         "https://uxawscdn.baozun.com/aws/96001096/20210825/D94CD379EBD0B64D75C6BBC6073690C0_1.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464"
-      ]
+      ],
+      isLike: false
     },
     {
-      id: "123",
+      id: "3",
       name: "Рубаха",
       size: [48, 50, 52],
       price: 1500,
@@ -47,10 +49,11 @@ export class ProductListPageComponent implements OnInit {
       listImage: [
         "https://uxawscdn.baozun.com/aws/96001096/20210825/9B8F088396634782A750BD352CC4A158.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464",
         "https://uxawscdn.baozun.com/aws/96001096/20210825/D94CD379EBD0B64D75C6BBC6073690C0_1.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464"
-      ]
+      ],
+      isLike: false
     },
     {
-      id: "123",
+      id: "4",
       name: "Рубаха",
       size: [48, 50, 52],
       price: 1500,
@@ -60,9 +63,13 @@ export class ProductListPageComponent implements OnInit {
       listImage: [
         "https://uxawscdn.baozun.com/aws/96001096/20210825/9B8F088396634782A750BD352CC4A158.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464",
         "https://uxawscdn.baozun.com/aws/96001096/20210825/D94CD379EBD0B64D75C6BBC6073690C0_1.png?x-oss-process=image/quality,q_80/format,webp/resize,m_fill,h_649,w_464"
-      ]
+      ],
+      isLike: true
     }
   ];
+
+  private likeButtonPathBefore: string = "../../../../assets/img/like-btn-before.png";
+  private likeButtonPathAfter: string = "../../../../assets/img/like-btn-after.png";
 
   constructor(private router: Router) { }
 
@@ -71,6 +78,12 @@ export class ProductListPageComponent implements OnInit {
 
   private setAllProducts(): void {
 
+  }
+
+  public getLikeButton(product: Product): string {
+    return product.isLike
+      ? this.likeButtonPathAfter
+      : this.likeButtonPathBefore;
   }
 
   public getListProduct(): Product[] {
@@ -83,5 +96,14 @@ export class ProductListPageComponent implements OnInit {
 
   public openCard(id: string): void {
     this.router.navigate(['product', id]);
+  }
+
+  public clickLike(product: Product): void {
+    this.listProduct.forEach(function (item) {
+      if (item.id === product.id) {
+        item.isLike = !item.isLike;
+        return;
+      }
+    }, this);
   }
 }

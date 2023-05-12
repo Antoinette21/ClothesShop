@@ -6,5 +6,6 @@ export interface Product {
   category: string,
   description: string,
   mainImage: string,
-  listImage: string[]
+  listImage: string[],
+  isLike: boolean
 }
