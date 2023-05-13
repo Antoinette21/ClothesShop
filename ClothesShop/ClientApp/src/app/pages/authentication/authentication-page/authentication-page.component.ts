@@ -18,9 +18,15 @@ export class AuthenticationPageComponent implements OnInit {
       password: ''
   };
 
+  private isAuth: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public getIsAuth(): boolean {
+    return this.isAuth;
   }
 
   public getUser(): User {
@@ -32,6 +38,19 @@ export class AuthenticationPageComponent implements OnInit {
   }
 
   public logIn(form: any): void {
+    console.log(form?.email);
+    console.log(form?.password);
+  }
+
+  public toRegistration(): void {
+    this.isAuth = false;
+  }
+
+  public backToLogIn(): void {
+    this.isAuth = true;
+  }
+
+  public registration(form: any): void {
     console.log(form?.email);
     console.log(form?.password);
   }

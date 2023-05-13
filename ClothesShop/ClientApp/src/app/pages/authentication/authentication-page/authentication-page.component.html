@@ -1,4 +1,4 @@
-<form class="w-50 mx-auto" #myForm="ngForm" novalidate (ngSubmit)="logIn(myForm.form.value)">
+<form *ngIf="getIsAuth()" class="w-50 mx-auto" #formAuth="ngForm" novalidate (ngSubmit)="logIn(formAuth.form.value)">
   <div class="form-group">
     <label for="exampleInputEmail1">Email</label>
     <input type="email" name="email" ngModel required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="vasya.pupkin@gmail.com">
@@ -6,9 +6,36 @@
   <div class="form-group my-4">
     <label for="exampleInputPassword1">Пароль</label>
     <input type="password" name="password" ngModel required class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div> 
+  <div class="">
+    <input type="submit" [disabled]="formAuth.invalid" class="btn btn-primary" value="Войти"/>
+    <button class="btn btn-primary mx-2" (click)="toRegistration()">Зарегистрироваться</button>
+  </div>
+</form>
+
+<form *ngIf="!getIsAuth()" class="w-50 mx-auto" #formRegistration="ngForm" novalidate (ngSubmit)="registration(formRegistration.form.value)">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Введите ваше полное имя</label>
+    <input type="email" name="email" ngModel required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Иванов Иван Иванович">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Введите ваш адрес</label>
+    <input type="email" name="email" ngModel required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="г. Самара, ул. Авроры д. 125, кв.45">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Введите ваш телефон</label>
+    <input type="email" name="email" ngModel required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="92372052015" pattern="[0-9]{10}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Введите ваш email</label>
+    <input type="email" name="email" ngModel required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="vasya.pupkin@gmail.com">
+  </div>
+  <div class="form-group my-4">
+    <label for="exampleInputPassword1">Введите ваш пароль</label>
+    <input type="password" name="password" ngModel required class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="">
-    <input type="submit" [disabled]="myForm.invalid" class="btn btn-primary" value="Войти"/>
-    <button class="btn btn-primary mx-2">Зарегистрироваться</button>
+    <input type="submit" [disabled]="formRegistration.invalid" class="btn btn-primary" value="Зарегистрироваться" />
+    <button class="btn btn-primary mx-2" (click)="backToLogIn()">Вернуться ко входу</button>
   </div>
 </form>
