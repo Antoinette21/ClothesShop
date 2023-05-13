@@ -1,16 +1,20 @@
-<div class="card w-100" *ngFor="let product of getAllBaskets()">
+<div class="card w-100 my-4" *ngFor="let product of getAllBaskets()">
   <div class="card-body">
     <div class="row">
       <div class="col-4">
-        <img src="{{ product.mainImage }}" class="card-img-top nav-link-cursor w-75" (click)="openProduct(product.id)">
+        <img src="{{ product.productImage }}" class="card-img-top nav-link-cursor w-75" (click)="openProduct(product.id)">
       </div>
       <div class="col-8">
-        <h5 class="card-title" (click)="openProduct(product.id)">{{ product.name }}</h5>
-        <p class="card-text my-4">{{ product.price }} руб</p>
-        <p class="card-text my-4">{{ product.price }} руб</p>
-        <a class="btn btn-primary cursor">Добавить</a>
-        <a class="btn btn-primary cursor">Удалить</a>
+        <h5 class="card-title" (click)="openProduct(product.id)">{{ product.productName }}</h5>
+        <p class="card-text my-4">Цена - {{ product.price }} руб</p>
+        <p class="card-text my-4">Количество - {{ product.count }}</p>
+        <a class="btn btn-outline-dark cursor" (click)="addProduct(product.id)">Добавить</a>
+        <a class="btn btn-outline-dark cursor  mx-4" (click)="deleteProduct(product.id)">Удалить</a>
       </div>
     </div>
   </div>
+</div>
+
+<div class="text-center">
+  <a class="btn btn-outline-dark cursor" (click)="placeOrder()">Оформить заказ</a>
 </div>

@@ -16,7 +16,8 @@ export class BasketPageComponent implements OnInit {
       orderId: "123",
       price: 1230,
       count: 1,
-      productName: "Рубаха"
+      productName: "Рубаха",
+      productImage: "https://uxawscdn.baozun.com/aws/96001096/20230509/D43D0D68AA67502BBE968D5E63DB6EB5_1.png?x-oss-process=image/resize,m_fill,h_492,w_392"
     },
     {
       id: "2",
@@ -24,7 +25,8 @@ export class BasketPageComponent implements OnInit {
       orderId: "123",
       price: 1890,
       count: 1,
-      productName: "Шорты"
+      productName: "Шорты",
+      productImage: "https://uxawscdn.baozun.com/aws/96001096/20230509/55C4CA960336B52308038A11D388E079_1.png?x-oss-process=image/resize,m_fill,h_492,w_392"
     }
   ];
 
@@ -39,5 +41,25 @@ export class BasketPageComponent implements OnInit {
 
   public openProduct(productId: string): void {
     this.router.navigate(['product', productId]);
+  }
+
+  public addProduct(productId: string): void {
+    this.basketList.forEach(function (item) {
+      if (item.id === productId) {
+        item.count++;
+      }
+    }, this);
+  }
+
+  public deleteProduct(productId: string): void {
+    this.basketList.forEach(function (item) {
+      if (item.id === productId) {
+        item.count--;
+      }
+    }, this);
+  }
+
+  public placeOrder(): void {
+    alert("Вы молодец! Оформили заказ!");
   }
 }
