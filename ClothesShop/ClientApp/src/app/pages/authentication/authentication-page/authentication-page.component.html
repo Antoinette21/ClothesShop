@@ -1,1 +1,14 @@
-<p>authentication-page works!</p>
+<form class="w-50 mx-auto" #myForm="ngForm" novalidate (ngSubmit)="logIn(myForm.form.value)">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" name="email" ngModel required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="vasya.pupkin@gmail.com">
+  </div>
+  <div class="form-group my-4">
+    <label for="exampleInputPassword1">Пароль</label>
+    <input type="password" name="password" ngModel required class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="">
+    <input type="submit" [disabled]="myForm.invalid" class="btn btn-primary" value="Войти"/>
+    <button class="btn btn-primary mx-2">Зарегистрироваться</button>
+  </div>
+</form>

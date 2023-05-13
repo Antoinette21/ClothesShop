@@ -25,4 +25,8 @@ export class NavigationComponent implements OnInit {
     this.router.navigate(['product-list']);
   }
 
+  openAuth(): void {
+    this.router.navigate(['authentication']);
+  }
+
 }
