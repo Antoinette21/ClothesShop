@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Basket } from '../../../models/basket';
+import { Product } from '../../../models/product';
 
 @Component({
   selector: 'app-basket-page',
@@ -52,11 +53,21 @@ export class BasketPageComponent implements OnInit {
   }
 
   public deleteProduct(productId: string): void {
+    let deleteProductId = "";
+
     this.basketList.forEach(function (item) {
       if (item.id === productId) {
         item.count--;
+
+        if (item.count === 0) {
+          deleteProductId = item.id;
+        }
       }
     }, this);
+
+    if (deleteProductId !== "") {
+      this.basketList = this.basketList.filter(function (el) { return el.id != deleteProductId; }); 
+    }
   }
 
   public placeOrder(): void {
