@@ -1,1 +1,44 @@
-<p>main-admin-page works!</p>
+<div class="row my-4">
+  <div class="col-md-8 mx-auto text-center">
+    <a class="btn btn-primary cursor" (click)="openAddModal(content)">Добавить новый товар</a>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col" *ngFor="let product of getListProduct()">
+    <div class="card h-100 cursor">
+      <img src="{{ product.mainImage }}" class="card-img-top">
+      <div class="card-body">
+        <div class="row align-items-start">
+          <div class="col-10">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.price }}</p>
+          </div>
+        </div>
+        <div>
+          <a class="btn btn-primary my-2 cursor" (click)="openModifyModal(content, product)">Изменить</a>
+          <a class="btn btn-primary my-2 mx-2 cursor">Удалить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{ getTitle() }}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Название группы</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="6401-090301D" value="">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-warning buttonModalAdd" (click)="modal.close('Close click')">Сохранить</button>
+  </div>
+</ng-template>

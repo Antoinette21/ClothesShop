@@ -18,6 +18,7 @@ import { MainAdminPageComponent } from './pages/main-admin/main-admin-page/main-
 import { NavigationComponent } from './navigation/navigation.component';
 import { ErrorPageComponent } from './pages/error/error-page/error-page.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { FooterComponent } from './footer/footer.component';
       { path: 'authentication', component: AuthenticationPageComponent },
       { path: 'admin', component: MainAdminPageComponent },
       { path: '**', component: ErrorPageComponent },
-    ])
+    ]),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
