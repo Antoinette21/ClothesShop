@@ -15,10 +15,10 @@ export class BasketPageComponent implements OnInit {
       id: "1",
       productId: "1",
       orderId: "123",
-      price: 1230,
-      count: 1,
-      productName: "Рубаха",
-      productImage: "https://uxawscdn.baozun.com/aws/96001096/20230509/D43D0D68AA67502BBE968D5E63DB6EB5_1.png?x-oss-process=image/resize,m_fill,h_492,w_392"
+      price: 6297,
+      count: 3,
+      productName: "Брюки",
+      productImage: "https://a.lmcdn.ru/img236x341/M/P/MP002XM1650F_19041199_1_v1_2x.jpg"
     },
     {
       id: "2",
@@ -26,8 +26,8 @@ export class BasketPageComponent implements OnInit {
       orderId: "123",
       price: 1890,
       count: 1,
-      productName: "Шорты",
-      productImage: "https://uxawscdn.baozun.com/aws/96001096/20230509/55C4CA960336B52308038A11D388E079_1.png?x-oss-process=image/resize,m_fill,h_492,w_392"
+      productName: "Брюки из хлопка SMART",
+      productImage: "https://a.lmcdn.ru/img236x341/R/T/RTLACC798801_18424216_1_v1_2x.jpg"
     }
   ];
 
@@ -71,6 +71,6 @@ export class BasketPageComponent implements OnInit {
   }
 
   public placeOrder(): void {
-    alert("Вы молодец! Оформили заказ!");
+    alert("Заказ успешно оформлен! Ожидайте доставку по адресу из профиля");
   }
 }

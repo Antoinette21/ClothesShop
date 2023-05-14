@@ -1,3 +1,20 @@
 .cursor {
   cursor:pointer;
 }
+
+.styles {
+  width: 360px;
+  position: absolute;
+  right: 88px;
+}
+
+.class-styles {
+  width: 330px;
+  margin-bottom: 2%;
+}
+
+.sort-style {
+  position: absolute;
+  right: 180px;
+  top: 3px;
+}

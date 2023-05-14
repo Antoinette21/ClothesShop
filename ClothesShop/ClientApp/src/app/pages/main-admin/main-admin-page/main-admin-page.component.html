@@ -12,6 +12,7 @@
         <div class="row align-items-start">
           <div class="col-10">
             <h5 class="card-title">{{ product.name }}</h5>
+            <h5 class="card-title">{{ product.brand }}</h5>
             <p class="card-text">{{ product.price }}</p>
           </div>
         </div>
@@ -33,12 +34,87 @@
   <div class="modal-body">
     <form>
       <div class="form-group">
-        <label for="formGroupExampleInput">Название группы</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="6401-090301D" value="">
+        <label for="formGroupExampleInput">Наименование</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Поло" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Бренд</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nike" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Размеры</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="48, 50, 52, 54" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Цена</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="1700" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Категория</label>
+        <select class="form-control">
+          <option>Men</option>
+          <option>Women</option>
+          <option>Bags</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Подкатегория</label>
+        <select class="form-control">
+          <option>брюки</option>
+          <option>джинсы</option>
+          <option>худи и свитшоты</option>
+          <option>футболки и поло</option>
+          <option>свитеры</option>
+          <option>костюмы</option>
+        </select>
+
+        <!--<select>
+    <option>платье и юбки</option>
+    <option>костюмы</option>
+    <option>брюки</option>
+    <option>джинсы</option>
+    <option>топы и майки</option>
+    <option>худи и свитшоты</option>
+    <option>свитеры</option>
+  </select>-->
+
+        <!--<select>
+          <option>сумки через плечо</option>
+          <option>верхние ручки</option>
+          <option>сумки-хобо</option>
+          <option>сумки</option>
+          <option>мини-сумки</option>
+          <option>портфели</option>
+        </select>-->
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Описание</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Что-то важное" value="" rows="5">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Главное изображение</label>
+        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Поло" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Первое изображение для страницы с товаром</label>
+        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Поло" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Второе изображение для страницы с товаром</label>
+        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Поло" value="">
       </div>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-warning buttonModalAdd" (click)="modal.close('Close click')">Сохранить</button>
+    <button type="button" class="btn btn-primary buttonModalAdd" (click)="modal.close('Close click')">Сохранить</button>
   </div>
 </ng-template>

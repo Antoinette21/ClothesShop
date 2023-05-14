@@ -10,3 +10,7 @@
 .nav-main-container {
   margin-bottom: 5%;
 }
+
+.li-marker {
+  list-style-type: none;
+}
